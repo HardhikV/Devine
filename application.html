@@ -45,9 +45,46 @@
 							<article id="intro">
 								<h2 class="major">LSPD</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
+								<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Connect Google Spreadsheet to HTML</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        <div class="form-group">
+                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+						</article>
 
 						<!-- Work -->
 							<article id="work">
