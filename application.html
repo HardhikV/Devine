@@ -42,48 +42,38 @@
 					<div id="main">
 
 						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">LSPD</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<div class="container register">
-            <div class="row">
-                <div class="col-md-12">
-                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Connect Google Spreadsheet to HTML</h3>
-                            <div class="row register-form">
-                                <div class="col-md-12">
-                                    <form method="post" autocomplete="off" name="google-sheet">
-                                        <div class="form-group">
-                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-          
-          <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
+							
+ <article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" autocomplete="off" name="google-sheet">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="Phone" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" name="submit" class="btnSubmit btn-block" value="Login" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul> 
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+         
 
 						</article>
 
@@ -365,7 +355,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- BG -->
 			<div id="bg"></div>
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby-WNTBMhAHTD8RpN-hy7_6t9ij6IO9UKKgmQbQIC6oonUmG3o9KL0s10t3k3smYZdhVg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
